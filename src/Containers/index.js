@@ -1,5 +1,5 @@
 import './App.css';
-import Banner from './Componets/Banner';
+import Banner from '../Components/Banner';
 
 function App() {
   return (
