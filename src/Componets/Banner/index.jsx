@@ -3,7 +3,9 @@ import './index.css'
 
 const Banner = () => {
   return (
-    <div className='container'>Banner</div>
+    <div className='container'>
+        <h1></h1>
+    </div>
   )
 }
 

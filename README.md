@@ -14,4 +14,4 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
 
-Open [https://dashboard.heroku.com/apps/dearragitapermatasari](https://dashboard.heroku.com/apps/dearragitapermatasari) to view it in your browser.
+Open [https://dearragitapermatasari.herokuapp.com/](https://dearragitapermatasari.herokuapp.com/) to view it in your browser.
