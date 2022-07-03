@@ -5,7 +5,7 @@ const Banner = () => {
   return (
     <>
       <Box style={{ border: "1px solid #000000"}}>
-        Banner
+        Bannerrr
       </Box>
     </>
   );
