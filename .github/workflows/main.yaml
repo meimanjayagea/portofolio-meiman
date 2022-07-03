@@ -22,10 +22,10 @@ jobs:
         run: |
           npm install
 
-      - name: 🎯 Test...
-        run: npm test
-        env:
-          CI: true
+      # - name: 🎯 Test...
+      #   run: npm test
+      #   env:
+      #     CI: true
 
       - name: ⚒️ Build
         run: |
