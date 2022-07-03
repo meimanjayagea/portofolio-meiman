@@ -1,0 +1,61 @@
+on: push
+name: 🚀 Deploy:ReactJS
+jobs:
+  web-deploy:
+    if: ${{ github.ref == 'refs/heads/main' }}
+    name: 🎉 Deploying...
+    runs-on: ubuntu-latest
+    steps:
+      - name: 🚚 Get latest code
+        uses: actions/checkout@v2
+
+      - name: ✅ Use Node.js 14
+        uses: actions/setup-node@v2
+        with:
+          node-version: "14"
+
+      - name: 🕓 Delayed 10 Second
+        run: |
+          sleep 10
+
+      - name: 🌊 Install Dependencies
+        run: |
+          npm install
+
+      - name: 🎯 Test...
+        run: npm test
+        env:
+          CI: true
+
+      - name: ⚒️ Build
+        run: |
+          pwd
+          npm run build
+
+      - name: 🚫 Remove Meta Files & Folders
+        run: |
+          rm -rf .github
+          rm -rf node_modules
+          rm -rf public
+          rm -rf src
+          rm .gitignore
+          rm package-lock.json || true
+          rm package.json
+          rm README.md
+          rm yarn.lock || true
+
+      - name: 📁 Top Level Change
+        run: |
+          mv -v ./build/* ./
+          rm -rf build
+
+      - name: 💾 Sync files to Hosting 📡
+        uses: SamKirkland/FTP-Deploy-Action@4.3.0
+        with:
+          server: ftp.meimanjayagea.com
+          username: ${{ secrets.ftp_email }}
+          password: ${{ secrets.ftp_password }}
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/node_modules/**
