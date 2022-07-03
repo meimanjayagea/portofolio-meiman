@@ -2,7 +2,7 @@ on: push
 name: 🚀 Deploy:ReactJS
 jobs:
   web-deploy:
-    if: ${{ github.ref == 'refs/heads/main' }}
+    if: ${{ github.ref == 'refs/heads/dev-meiman' }}
     name: 🎉 Deploying...
     runs-on: ubuntu-latest
     steps:
